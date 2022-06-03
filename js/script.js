@@ -251,7 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
   function showThanksModal(message) {
     const prevModalDialog = document.querySelector(".modal__dialog");
 
