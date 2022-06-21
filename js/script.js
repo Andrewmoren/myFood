@@ -491,8 +491,27 @@ document.addEventListener("DOMContentLoaded", () => {
     ratio = localStorage.getItem("ratio");
   } else {
     ratio = 1.375;
-    localStorage.setItem("ratio", "female");
+    localStorage.setItem("ratio", 1.375);
   }
+
+  function initLocalSettings(selector, activeClass) {
+    const elements = document.querySelectorAll(selector);
+
+    elements.forEach((elem) => {
+      elem.classList.remove(activeClass);
+      if (elem.getAttribute("id") === localStorage.getItem("sex")) {
+        elem.classList.add(activeClass);
+      }
+      if (elem.getAttribute("data-ratio") === localStorage.getItem("ratio")) {
+        elem.classList.add(activeClass);
+      }
+    });
+  }
+  initLocalSettings("#gender", "calculating__choose-item_active");
+  initLocalSettings(
+    ".calculating__choose_big",
+    "calculating__choose-item_active"
+  );
 
   function calcTotal() {
     if (!sex || !height || !weight || !age || !ratio) {
