@@ -1,4 +1,4 @@
-function Calculator() {
+function calculator() {
   // Calculator
 
   const result = document.querySelector(".calculating__result span");
@@ -117,3 +117,5 @@ function Calculator() {
   getDynamicInformation("#weight");
   getDynamicInformation("#age");
 }
+
+module.exports = calculator;
