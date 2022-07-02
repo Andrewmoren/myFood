@@ -17,6 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   timer();
   cards();
   calculator();
-  forms(modalTimerID);
+  forms("form", modalTimerID);
   slider();
 });
